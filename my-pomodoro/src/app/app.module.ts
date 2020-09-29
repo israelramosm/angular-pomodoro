@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppPomodoro } from './app-pomodoro/app.pomodoro';
 import { AppConfig } from './app-config/app.config';
+import { AppTask } from './app-task/app.task';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppPomodoro,
-    AppConfig
+    AppConfig,
+    AppTask
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,5 +11,5 @@
 * As a user, I can delete a task either completed or not
 * As a user, I can edit a task that is not marked as done, either the name or number of intervals
 * As a user, I can pause, stop or resume the timer once it’s running
-* As a user, I want to see the raining time in the mm:ss format
+* As a user, I want to see the training time in the mm:ss format
 * As a user, I want to be notified when a break has begun which is when a session countdown reaches zero (00:00)
