@@ -7,11 +7,13 @@ import { AppPomodoro } from './app-pomodoro/app.pomodoro';
 import { AppConfig } from './app-config/app.config';
 import { AppTask } from './app-task/app.task';
 import { FormsModule } from '@angular/forms';
+import { AppClock } from './app-clock/app.clock';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppPomodoro,
+    AppClock,
     AppConfig,
     AppTask
   ],

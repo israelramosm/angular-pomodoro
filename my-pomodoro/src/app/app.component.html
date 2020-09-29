@@ -39,15 +39,13 @@
     </div>
   </nav>
   <main>
-    <section class="container">
-      <app-config></app-config>
-      <app-pomodoro></app-pomodoro>
-      <app-task></app-task>
-    </section>
+      <app-pomodoro
+        (setPomodoro)=setPomodoroData($event)
+        (savePomodoro)=savePomodoroData($event)
+      ></app-pomodoro>
   </main>
 </body>
 
 </html>
-
 
 <router-outlet></router-outlet>

@@ -9,10 +9,4 @@ export class AppPomodoro {
 
     constructor() {}
 
-    startTimer() {}
-
-    stopTimer() {}
-
-    resetTimer() {}
-
 }

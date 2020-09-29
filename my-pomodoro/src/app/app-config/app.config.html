@@ -1,37 +1,40 @@
 <section class="mb-5">
-    <div class="row mb-3 ">
+    <div class="row mb-3">
+        <div class="form-group col-12 mb-1">
+            <input name="pomodoroName" id="pomodoroName" class="form-control" type="text" placeholder="Pomodoro" [(ngModel)]="pomodoroConfig.pomodoroName">
+        </div>
         <div class="input-group mb-3 col">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="startTime">Start Time</label>
             </div>
-            <input name="startTime" id="startTime" class="form-control" placeholder="{{startTime}}" type="number" min="10" max="25" [(ngModel)]="startTime">
+            <input name="startTime" id="startTime" class="form-control" type="number" min="10" max="25" [(ngModel)]="pomodoroConfig.startTime">
         </div>
         <div class="input-group mb-3 col">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="shortBreakTime">Short Break Time</label>
             </div>
-            <input name="shortBreakTime" id="shortBreakTime" class="form-control" placeholder="{{shortBreakTime}}" type="number" min="1" max="5" [(ngModel)]="shortBreakTime">
+            <input name="shortBreakTime" id="shortBreakTime" class="form-control" type="number" min="1" max="5" [(ngModel)]="pomodoroConfig.shortBreakTime">
         </div>
         <div class="input-group mb-3 col">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="largeBreakTime">Large Break Time</label>
             </div>
-            <input name="largeBreakTime" id="largeBreakTime" class="form-control" placeholder="{{largeBreakTime}}" type="number" min="10" max="20" [(ngModel)]="largeBreakTime">
+            <input name="largeBreakTime" id="largeBreakTime" class="form-control" type="number" min="10" max="20" [(ngModel)]="pomodoroConfig.largeBreakTime">
         </div>
         <div class="input-group mb-3 col">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="breakInterval">Long Break Interval</label>
             </div>
-            <input name="breakInterval" id="breakInterval" class="form-control" placeholder="{{breakInterval}}" type="number" min="1" max="5" [(ngModel)]="breakInterval">
+            <input name="breakInterval" id="breakInterval" class="form-control" type="number" min="1" max="5" [(ngModel)]="pomodoroConfig.breakInterval">
         </div>
     </div>
     
-    <div class="row mb-3  justify-content-center">
+    <div class="row mb-3 justify-content-center">
         <div class="input-group col-3">
-            <button type="button" class="btn btn-secondary" (click)="setPomodoro.emit()">Set</button>
+            <button type="button" class="btn btn-secondary" (click)="emitSetPomodoro()">Set</button>
         </div>
         <div class="input-group col-3">
-            <button type="button" class="btn btn-primary" (click)="setPomodoro.emit()">Save</button>
+            <button type="button" class="btn btn-primary" (click)="emitSavePomodoro()">Save</button>
         </div>
     </div>
 </section>
