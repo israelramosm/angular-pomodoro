@@ -1,7 +1,7 @@
 <section>
     <h2>Tasks</h2>
-    <div >
-        <ul *ngFor="let task of tasks" click="setConfig(task)">
+    <div>
+        <ul *ngFor="let task of tasks" (click)="setClock(task)">
             <li>{{task.pomodoroName}}</li>
             <li>{{task.startTime}}</li>
             <li>{{task.shortBreakTime}}</li>

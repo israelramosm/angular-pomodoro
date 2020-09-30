@@ -3,7 +3,6 @@
   <app-config 
     (setPomodoro)="setPomodoroData($event)"
     (savePomodoro)="savePomodoroData($event)"
-    (setConfigClock)="setPomodoroData($event)"
   ></app-config>
-  <app-task [tasks]="tasks"></app-task>
+  <app-task [tasks]="tasks" (setConfigClock)="setPomodoroData($event)"></app-task>
 </div>

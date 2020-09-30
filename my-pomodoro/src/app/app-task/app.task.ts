@@ -14,4 +14,6 @@ export class AppTask {
     setClock(task) {
       this.setConfigClock.emit(task);
     };
+
+
 }

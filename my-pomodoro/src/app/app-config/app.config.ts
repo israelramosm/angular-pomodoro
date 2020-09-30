@@ -10,7 +10,6 @@ export class AppConfig {
     setPomodoro: EventEmitter<Object> = new EventEmitter<Object>();
     @Output() 
     savePomodoro: EventEmitter<Object> = new EventEmitter<Object>();
-    clicked = "none";
 
     pomodoroConfig = {
         pomodoroName: "",
@@ -25,14 +24,12 @@ export class AppConfig {
 
     emitSetPomodoro() {
         let obj = this.pomodoroConfig;
-        this.clicked = "EMIT SET";
         obj.pomodoroName = obj.pomodoroName === "" ? "Pomodoro" : obj.pomodoroName;
         this.setPomodoro.emit(obj);
     }
 
     emitSavePomodoro() {
         let obj = this.pomodoroConfig;
-        this.clicked = "EMIT SAVE";
         obj.pomodoroName = obj.pomodoroName === "" ? "Pomodoro" : obj.pomodoroName;
         this.savePomodoro.emit(obj);
         return;
