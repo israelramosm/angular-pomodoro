@@ -9,7 +9,6 @@ export class AppClock {
       
     constructor() {}
 
-
     startTimer() {}
 
     stopTimer() {}

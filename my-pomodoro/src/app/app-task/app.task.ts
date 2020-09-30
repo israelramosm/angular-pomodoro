@@ -6,10 +6,15 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./app.task.css']
 })
 export class AppTask {
-    @Input() taskName: String = "Pomodoro";
-    tasksSaved: Object = {};
+    @Input() taskSaved: Object = {};
+    tasks = [];
+    change;
     
     constructor() {}
+
+    ngOnChanges(changes) {
+      this.change = changes;
+    }
 
     saveTask() {}
 

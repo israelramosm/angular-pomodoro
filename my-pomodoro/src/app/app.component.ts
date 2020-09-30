@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-pomodoro';
+  saveConfig: Object = {};
+  setConfig: Object = {};
+  
+  setPomodoroData(event) {
+    this.setConfig = event;
+  }
 
-  setPomodoroData(event) {}
-
-  savePomodoroData(event) {}
-
+  savePomodoroData(event) {
+    this.saveConfig = event;
+  }
 }
