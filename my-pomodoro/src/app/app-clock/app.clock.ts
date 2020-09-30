@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -6,7 +6,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./app.clock.css']
 })
 export class AppClock {
-      
+    @Input() setConfig = {};
+
     constructor() {}
 
     startTimer() {}

@@ -3,6 +3,14 @@
         <header>
             <h2>timer</h2>
         </header>
+        <div *ngIf="setConfig">
+            <p>{{setConfig.pomodoroName}}</p>
+            <p>{{setConfig.startTime}}</p>
+            <p>{{setConfig.shortBreakTime}}</p>
+            <p>{{setConfig.largeBreakTime}}</p>
+            <p>{{setConfig.breakInterval}}</p>
+            <p>{{setConfig.isDone}}</p>
+        </div>
     </div>
     <div class="col">
         <div class="row">

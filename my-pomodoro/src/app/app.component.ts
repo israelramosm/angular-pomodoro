@@ -12,15 +12,27 @@ export class AppComponent {
   saveConfig: Object = {};
   setConfig: Object = {};
   tasks = [];
-  
+
   setPomodoroData(event) {
-    this.setConfig = event;
+    console.log("set");
+    this.setConfig = this.mapEventToObject(event);
   }
 
   savePomodoroData(event) {
     console.log("save");
-    this.saveConfig = event;
-    this.saveConfig["isDone"] = false;
-    this.tasks.push(this.saveConfig);
+    this.tasks.push(this.mapEventToObject(event));
+  }
+
+  mapEventToObject(event) {
+    let pomodoroName = event.pomodoroName;
+    let startTime = event.startTime;
+    let shortBreakTime = event.shortBreakTime;
+    let largeBreakTime = event.largeBreakTime;
+    let breakInterval = event.breakInterval;
+    let isDone = event.isDone;
+    let obj = {
+      pomodoroName, startTime, shortBreakTime, largeBreakTime, breakInterval, isDone
+    };
+    return obj;
   }
 }

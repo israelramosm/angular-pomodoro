@@ -17,7 +17,8 @@ export class AppConfig {
         startTime: 25,
         shortBreakTime: 5,
         largeBreakTime: 20,
-        breakInterval: 4
+        breakInterval: 4,
+        isDone: false
     }
        
     constructor() {}

@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-task',
@@ -7,8 +7,11 @@ import { Component, Input, Output } from '@angular/core';
 })
 export class AppTask {
     @Input() tasks = [];
-
-    change;
+    @Output() setConfigClock: EventEmitter<Object> = new EventEmitter();
     
     constructor() {}
+
+    setClock(task) {
+      this.setConfigClock.emit(task);
+    };
 }
