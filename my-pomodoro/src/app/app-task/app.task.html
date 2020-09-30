@@ -1,7 +1,14 @@
 <section>
     <h2>Tasks</h2>
-    <div>
-        {{changes}}
+    <div >
+        <ul *ngFor="let task of tasks">
+            <li>{{task.pomodoroName}}</li>
+            <li>{{task.startTime}}</li>
+            <li>{{task.shortBreakTime}}</li>
+            <li>{{task.largeBreakTime}}</li>
+            <li>{{task.breakInterval}}</li>
+            <li>{{task.isDone}}</li>
+        </ul>
     </div>
     <h2>Done</h2>
     <div></div>

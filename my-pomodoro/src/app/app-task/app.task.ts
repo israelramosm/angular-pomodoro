@@ -6,20 +6,9 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./app.task.css']
 })
 export class AppTask {
-    @Input() taskSaved: Object = {};
-    tasks = [];
+    @Input() tasks = [];
+
     change;
     
     constructor() {}
-
-    ngOnChanges(changes) {
-      this.change = changes;
-    }
-
-    saveTask() {}
-
-    deleteTask() {}
-
-    markAsDone() {}
-
 }

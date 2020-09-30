@@ -34,5 +34,6 @@ export class AppConfig {
         this.clicked = "EMIT SAVE";
         obj.pomodoroName = obj.pomodoroName === "" ? "Pomodoro" : obj.pomodoroName;
         this.savePomodoro.emit(obj);
+        return;
     }
 }

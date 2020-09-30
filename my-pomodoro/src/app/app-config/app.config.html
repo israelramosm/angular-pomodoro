@@ -37,7 +37,7 @@
             <button type="button" class="btn btn-secondary" (click)="emitSetPomodoro()">Set</button>
         </div>
         <div class="input-group col-3">
-            <button type="button" class="btn btn-primary" (click)="emitSavePomodoro()">Save</button>
+            <button type="button" class="btn btn-primary" (click)="emitSavePomodoro(); $event.stopPropagation();">Save</button>
         </div>
     </div>
 </section>
