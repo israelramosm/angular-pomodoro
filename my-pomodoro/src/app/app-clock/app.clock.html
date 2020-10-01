@@ -6,15 +6,15 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Start Time
-                <span>{{setConfig.startTime}}</span>
+                <span class="mm">{{setConfig.startTime ? setConfig.startTime + " min" : ""}}</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Short Break Time
-                <span>{{setConfig.shortBreakTime}}</span>
+                <span>{{setConfig.shortBreakTime ? setConfig.shortBreakTime + " min" : ""}}</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                Large Break Time
-                <span>{{setConfig.longBreakTime}}</span>
+                Long Break Time
+                <span>{{setConfig.longBreakTime ? setConfig.longBreakTime + " min" : ""}}</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Long Break Interval
@@ -23,16 +23,15 @@
         </ul>
     </div>
     <div class="col">
-        <header>
-            <h2>timer</h2>
-        </header>
-
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col"><button type="button" class="btn btn-success">Start</button></div>
-            <div class="col"><button type="button" class="btn btn-danger">Stop</button></div>
-            <div class="col"><button type="button" class="btn btn-info">Reset</button></div>
+        <div>
+            <h2>{{mmLeft}} : {{ssLeft}}</h2>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><button type="button" class="btn btn-success" (click)="startPauseTimer()">{{isTimerPause ? "Start" : "Pause"}}</button></div>
+                <div class="col"><button type="button" class="btn btn-danger" (click)="stopTimer()">Stop</button></div>
+            </div>
         </div>
     </div>
+
 </section>
