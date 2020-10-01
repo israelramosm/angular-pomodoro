@@ -26,7 +26,7 @@ export class AppClock {
       breakInterval: 4,
       isDone: false
     }
-    this.mmLeft = this.setConfig.startTime;
+    this.mmLeft = this.setConfig.startTime < 10 ? "0" + this.setConfig.startTime : this.setConfig.startTime;
     this.ssLeft = "00";
     this.intervalBreaks = this.setConfig.breakInterval;
   }
@@ -49,8 +49,10 @@ export class AppClock {
     
   }
 
-  stopTimer() {
-    this.mmLeft = this.setConfig.startTime;
+  stopTimer(min) {
+    console.log(min);
+    console.log(this.setConfig.startTime);
+    this.mmLeft = min < 10 ? "0" + min : min;
     this.ssLeft = "00";
     this.isTimerPause = true;
     clearInterval(this.timer);
@@ -61,16 +63,24 @@ export class AppClock {
       if(this.ssLeft == "00") {
         this.ssLeft = 59;
         this.mmLeft--;
-        this.mmLeft = this.mmLeft < 10 ? "0" + this.mmLeft-- : this.mmLeft;
+        this.mmLeft = this.mmLeft < 10 ? "0" + this.mmLeft : this.mmLeft;
       } else {
         this.ssLeft--;
-        this.ssLeft = this.ssLeft < 10 ? "0" + this.ssLeft-- : this.ssLeft;
+        this.ssLeft = this.ssLeft < 10 ? "0" + this.ssLeft : this.ssLeft;
       }
-    } else {
-      if(this.intervalBreaks > 0){
-        this.intervalBreaks--;
-        this.mmLeft = this.setConfig.shortBreakTime;
-        this.startPauseTimer();
+
+      if(this.mmLeft == 0 && this.ssLeft == "00") {
+        if(this.intervalBreaks > 0){
+          this.intervalBreaks--;
+          this.mmLeft = this.setConfig.shortBreakTime;
+          this.ssLeft = "00";
+          this.stopTimer(this.mmLeft);
+        } else {
+          this.intervalBreaks = this.setConfig.breakInterval;
+          this.ssLeft = "00";
+          this.stopTimer(this.setConfig.longBreakTime);
+        }
+        
       }
     }
   }
