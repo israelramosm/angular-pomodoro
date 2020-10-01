@@ -14,7 +14,6 @@ export class AppComponent {
   tasks = [];
 
   setPomodoroData(event) {
-    console.log("set");
     this.setConfig = this.mapEventToObject(event);
   }
 

@@ -39,7 +39,10 @@ export class AppClock {
 
   ngOnChanges(changes) {
     this.setConfig = changes.setConfig.currentValue;
-    this.mmLeft = this.setConfig.startTime;
+    this.mmLeft = this.setConfig.startTime < 10 ? "0" + this.setConfig.startTime : this.setConfig.startTime;
+    this.ssLeft = "00";
+    this.intervalBreaks = this.setConfig.breakInterval;
+    this.stopTimer(this.mmLeft);
   }
 
   startPauseTimer() {
@@ -56,8 +59,6 @@ export class AppClock {
   }
 
   stopTimer(min) {
-    console.log(min);
-    console.log(this.setConfig.startTime);
     this.mmLeft = min < 10 ? "0" + min : min;
     this.ssLeft = "00";
     this.isTimerPause = true;
