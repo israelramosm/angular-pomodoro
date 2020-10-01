@@ -15,7 +15,7 @@ export class AppConfig {
         pomodoroName: "",
         startTime: 25,
         shortBreakTime: 5,
-        largeBreakTime: 20,
+        longBreakTime: 20,
         breakInterval: 4,
         isDone: false
     }

@@ -27,11 +27,11 @@ export class AppComponent {
     let pomodoroName = event.pomodoroName;
     let startTime = event.startTime;
     let shortBreakTime = event.shortBreakTime;
-    let largeBreakTime = event.largeBreakTime;
+    let longBreakTime = event.longBreakTime;
     let breakInterval = event.breakInterval;
     let isDone = event.isDone;
     let obj = {
-      pomodoroName, startTime, shortBreakTime, largeBreakTime, breakInterval, isDone
+      pomodoroName, startTime, shortBreakTime, longBreakTime, breakInterval, isDone
     };
     return obj;
   }

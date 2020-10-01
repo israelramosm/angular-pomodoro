@@ -1,16 +1,32 @@
 <section class="row mb-5 mt-5">
+    <div class="col" *ngIf="setConfig">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <h3>{{setConfig.pomodoroName ? setConfig.pomodoroName: "Pomodoro"}}</h3>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Start Time
+                <span>{{setConfig.startTime}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Short Break Time
+                <span>{{setConfig.shortBreakTime}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Large Break Time
+                <span>{{setConfig.longBreakTime}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Long Break Interval
+                <span>{{setConfig.breakInterval}}</span>
+            </li>
+        </ul>
+    </div>
     <div class="col">
         <header>
             <h2>timer</h2>
         </header>
-        <div *ngIf="setConfig">
-            <p>{{setConfig.pomodoroName}}</p>
-            <p>{{setConfig.startTime}}</p>
-            <p>{{setConfig.shortBreakTime}}</p>
-            <p>{{setConfig.largeBreakTime}}</p>
-            <p>{{setConfig.breakInterval}}</p>
-            <p>{{setConfig.isDone}}</p>
-        </div>
+
     </div>
     <div class="col">
         <div class="row">
