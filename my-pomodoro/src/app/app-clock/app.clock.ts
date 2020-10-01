@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -7,13 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class AppClock {
   @Input() setConfig;
+  @ViewChild('messageModal') myModal:ElementRef;
 
   intervalBreaks;
   mmLeft;
   ssLeft;
   timer;
+  modalMessage;
+  modalTitle ;
   isTimerPause = true;
   isBreakTime = false;
+
 
 
   constructor() { }
@@ -30,6 +34,7 @@ export class AppClock {
     this.mmLeft = this.setConfig.startTime < 10 ? "0" + this.setConfig.startTime : this.setConfig.startTime;
     this.ssLeft = "00";
     this.intervalBreaks = this.setConfig.breakInterval;
+    this.modalTitle = "Creativity Time";
   }
 
   ngOnChanges(changes) {
@@ -72,6 +77,9 @@ export class AppClock {
 
       if(this.mmLeft == 0 && this.ssLeft == "00") {
         if(!this.isBreakTime) {
+          this.modalTitle = "Break Time";
+          this.modalMessage = "Is time for your break, relax a little bit";
+          this.myModal.nativeElement.click();
           this.isBreakTime = true;
           if(this.intervalBreaks > 1){
             this.intervalBreaks--;
@@ -79,11 +87,17 @@ export class AppClock {
             this.ssLeft = "00";
             this.stopTimer(this.mmLeft);
           } else {
+            this.modalTitle = "Break Time";
+            this.modalMessage = "Is time for your long break, go grab some snack";
+            this.myModal.nativeElement.click();
             this.intervalBreaks = this.setConfig.breakInterval;
             this.ssLeft = "00";
             this.stopTimer(this.setConfig.longBreakTime);
           }
         }else {
+          this.modalTitle = "Creativity Time";
+          this.modalMessage = "Your break is done, Let's create amazing stuff";
+          this.myModal.nativeElement.click();
           this.isBreakTime = false;
           this.mmLeft = this.setConfig.startTime;
           this.ssLeft = "00";
