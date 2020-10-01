@@ -21,9 +21,9 @@ export class AppClock {
   ngOnInit() {
     this.setConfig = {
       pomodoroName: "",
-      startTime: 2,
-      shortBreakTime: 1,
-      longBreakTime: 3,
+      startTime: 25,
+      shortBreakTime: 5,
+      longBreakTime: 20,
       breakInterval: 4,
       isDone: false
     }
@@ -42,7 +42,7 @@ export class AppClock {
       this.isTimerPause = false;
       this.timer = setInterval(() => {
         this.timerLogic();
-      }, 500);
+      }, 1000);
     } else {
       clearInterval(this.timer);
       this.isTimerPause = true;
@@ -62,7 +62,7 @@ export class AppClock {
   timerLogic() {
     if (this.mmLeft >= 0) {
       if(this.ssLeft == "00") {
-        this.ssLeft = 5;
+        this.ssLeft = 59;
         this.mmLeft--;
         this.mmLeft = this.mmLeft < 10 ? "0" + this.mmLeft : this.mmLeft;
       } else {
