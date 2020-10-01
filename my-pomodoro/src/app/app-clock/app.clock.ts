@@ -72,9 +72,7 @@ export class AppClock {
 
       if(this.mmLeft == 0 && this.ssLeft == "00") {
         if(!this.isBreakTime) {
-          console.log("Break Time");
           this.isBreakTime = true;
-          console.log(this.intervalBreaks);
           if(this.intervalBreaks > 1){
             this.intervalBreaks--;
             this.mmLeft = this.setConfig.shortBreakTime;
@@ -86,7 +84,6 @@ export class AppClock {
             this.stopTimer(this.setConfig.longBreakTime);
           }
         }else {
-          console.log("Working Time")
           this.isBreakTime = false;
           this.mmLeft = this.setConfig.startTime;
           this.ssLeft = "00";
