@@ -17,7 +17,7 @@
         </div>
         <div class="input-group mb-3 col">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="longBreakTime">Large Break Time</label>
+                <label class="input-group-text" for="longBreakTime">Long Break Time</label>
             </div>
             <input name="longBreakTime" id="longBreakTime" class="form-control" type="number" min="10" max="20" [(ngModel)]="pomodoroConfig.longBreakTime">
         </div>
@@ -34,7 +34,7 @@
             <button type="button" class="btn btn-secondary" (click)="emitSetPomodoro()">Set</button>
         </div>
         <div class="input-group col-3">
-            <button type="button" class="btn btn-primary" (click)="emitSavePomodoro(); $event.stopPropagation();">Save</button>
+            <button type="button" class="btn btn-primary" (click)="emitSavePomodoro();">Save</button>
         </div>
     </div>
 </section>

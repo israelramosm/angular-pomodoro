@@ -15,5 +15,17 @@ export class AppTask {
       this.setConfigClock.emit(task);
     };
 
+    markAsDone(taskId) {
+      this.tasks[taskId].isDone = true;
+    }
+
+    saveTask(task, taskId) {
+      task.isDone = false;
+      this.tasks[taskId] = task;
+    }
+
+    removeTask(taskId) {
+      this.tasks.splice(taskId, 1);
+    }
 
 }
