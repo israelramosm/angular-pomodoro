@@ -13,6 +13,7 @@ export class AppClock {
   ssLeft;
   timer;
   isTimerPause = true;
+  isBreakTime = false;
 
 
   constructor() { }
@@ -20,9 +21,9 @@ export class AppClock {
   ngOnInit() {
     this.setConfig = {
       pomodoroName: "",
-      startTime: 25,
-      shortBreakTime: 5,
-      longBreakTime: 20,
+      startTime: 2,
+      shortBreakTime: 1,
+      longBreakTime: 3,
       breakInterval: 4,
       isDone: false
     }
@@ -41,7 +42,7 @@ export class AppClock {
       this.isTimerPause = false;
       this.timer = setInterval(() => {
         this.timerLogic();
-      }, 1000);
+      }, 500);
     } else {
       clearInterval(this.timer);
       this.isTimerPause = true;
@@ -61,7 +62,7 @@ export class AppClock {
   timerLogic() {
     if (this.mmLeft >= 0) {
       if(this.ssLeft == "00") {
-        this.ssLeft = 59;
+        this.ssLeft = 5;
         this.mmLeft--;
         this.mmLeft = this.mmLeft < 10 ? "0" + this.mmLeft : this.mmLeft;
       } else {
@@ -70,17 +71,27 @@ export class AppClock {
       }
 
       if(this.mmLeft == 0 && this.ssLeft == "00") {
-        if(this.intervalBreaks > 0){
-          this.intervalBreaks--;
-          this.mmLeft = this.setConfig.shortBreakTime;
+        if(!this.isBreakTime) {
+          console.log("Break Time");
+          this.isBreakTime = true;
+          console.log(this.intervalBreaks);
+          if(this.intervalBreaks > 1){
+            this.intervalBreaks--;
+            this.mmLeft = this.setConfig.shortBreakTime;
+            this.ssLeft = "00";
+            this.stopTimer(this.mmLeft);
+          } else {
+            this.intervalBreaks = this.setConfig.breakInterval;
+            this.ssLeft = "00";
+            this.stopTimer(this.setConfig.longBreakTime);
+          }
+        }else {
+          console.log("Working Time")
+          this.isBreakTime = false;
+          this.mmLeft = this.setConfig.startTime;
           this.ssLeft = "00";
           this.stopTimer(this.mmLeft);
-        } else {
-          this.intervalBreaks = this.setConfig.breakInterval;
-          this.ssLeft = "00";
-          this.stopTimer(this.setConfig.longBreakTime);
         }
-        
       }
     }
   }
