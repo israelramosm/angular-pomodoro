@@ -31,7 +31,7 @@
         </div>
         <div class="col">
             <div class="row">
-                <div class="col text-center"><button type="button" class="btn btn-success"
+                <div class="col text-center"><button type="button" class="btn {{isTimerPause ? 'btn-success' : 'btn-secondary'}}"
                         (click)="startPauseTimer()">{{isTimerPause ? "Start" : "Pause"}}</button></div>
                 <div class="col text-center"><button type="button" class="btn btn-danger"
                         (click)="stopTimer(setConfig.startTime)">Stop</button></div>

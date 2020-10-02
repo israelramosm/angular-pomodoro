@@ -12,7 +12,7 @@
                     </h2>
                 </div>
 
-                <div [attr.id]="'collapse'+i" class="collapse show" aria-labelledby="{{task.pomodoroName}}"
+                <div [attr.id]="'collapse'+i" class="collapse" aria-labelledby="{{task.pomodoroName}}"
                     data-parent="#tasks">
                     <div class="card-body">
                         <div class="row mb-3">
@@ -77,46 +77,46 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                             [attr.data-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
-                            {{task.pomodoroName}}
+                            <strike>{{task.pomodoroName}}</strike>
                         </button>
                     </h2>
                 </div>
 
-                <div [attr.id]="'collapse'+i" class="collapse show" aria-labelledby="{{task.pomodoroName}}"
+                <div [attr.id]="'collapse'+i" class="collapse" aria-labelledby="{{task.pomodoroName}}"
                     data-parent="#doneTasks">
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="form-group col-12 mb-1">
                                 <input name="task.pomodoroName" id="task.pomodoroName" class="form-control" type="text"
-                                    placeholder="Pomodoro" [(ngModel)]="task.pomodoroName">
+                                    placeholder="Pomodoro" [(ngModel)]="task.pomodoroName" disabled>
                             </div>
                             <div class="input-group mb-3 col">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="task.startTime">Start Time</label>
                                 </div>
                                 <input name="task.startTime" id="task.startTime" class="form-control" type="number"
-                                    min="10" max="25" [(ngModel)]="task.startTime">
+                                    min="10" max="25" [(ngModel)]="task.startTime" disabled>
                             </div>
                             <div class="input-group mb-3 col">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="task.shortBreakTime">Short Break Time</label>
                                 </div>
                                 <input name="task.shortBreakTime" id="task.shortBreakTime" class="form-control"
-                                    type="number" min="1" max="5" [(ngModel)]="task.shortBreakTime">
+                                    type="number" min="1" max="5" [(ngModel)]="task.shortBreakTime" disabled>
                             </div>
                             <div class="input-group mb-3 col">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="task.longBreakTime">Long Break Time</label>
                                 </div>
                                 <input name="task.longBreakTime" id="task.longBreakTime" class="form-control"
-                                    type="number" min="10" max="20" [(ngModel)]="task.longBreakTime">
+                                    type="number" min="10" max="20" [(ngModel)]="task.longBreakTime" disabled>
                             </div>
                             <div class="input-group mb-3 col">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="task.breakInterval">Long Break Interval</label>
                                 </div>
                                 <input name="task.breakInterval" id="task.breakInterval" class="form-control"
-                                    type="number" min="1" max="5" [(ngModel)]="task.breakInterval">
+                                    type="number" min="1" max="5" [(ngModel)]="task.breakInterval" disabled>
                             </div>
                         </div>
 
