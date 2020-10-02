@@ -1,5 +1,17 @@
 # angular-pomodoro
 
+## Configuration
+
+**Node Version**: 12.14.0
+**NPM Version**: 6.13.4
+
+To run the application navigate to the folder my-pomodoro, then:
+
+```shell
+npm install
+npm start
+```
+
 ## Code challenge
 
 * As a Product Owner, want to roll out a Pomodoro clock web application to increase the productivity among our employees
