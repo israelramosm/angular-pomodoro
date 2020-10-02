@@ -5,7 +5,12 @@
 **Node Version**: 12.14.0
 **NPM Version**: 6.13.4
 
-To run the application navigate to the folder my-pomodoro, then:
+To run the application navigate to the folder from the root of the project:
+
+```shell
+cd my-pomodoro
+```
+then:
 
 ```shell
 npm install
